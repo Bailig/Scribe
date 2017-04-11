@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Scribe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gt2-ea-DVe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCRIBE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCt-PA-AUu">
+                                        <rect key="frame" x="153" y="13" width="68.5" height="28"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="PCt-PA-AUu" firstAttribute="centerX" secondItem="Gt2-ea-DVe" secondAttribute="centerX" id="00T-GC-SDQ"/>
+                                    <constraint firstAttribute="height" constant="55" id="Mqz-sk-pRA"/>
+                                    <constraint firstItem="PCt-PA-AUu" firstAttribute="centerY" secondItem="Gt2-ea-DVe" secondAttribute="centerY" id="ZB8-pM-oSw"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY &amp; TRANSCRIBE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qF-RR-M3x">
+                                <rect key="frame" x="91" y="609" width="193" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaM-jR-pdX" customClass="CircleButton" customModule="Scribe" customModuleProvider="target">
+                                <rect key="frame" x="157" y="537" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4gb-oO-WNq"/>
+                                    <constraint firstAttribute="width" constant="60" id="Q3F-JZ-NvB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6g7-qs-egJ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap the button below to transribe the audio embedded in this app." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="89p-wZ-C0Z">
+                                <rect key="frame" x="20" y="75" width="335" height="442"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="tpL-s6-pvP">
+                                <rect key="frame" x="157" y="537.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0e3-dy-605"/>
+                                    <constraint firstAttribute="width" constant="60" id="XT5-fa-uJV"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="89p-wZ-C0Z" secondAttribute="trailing" constant="20" id="08f-EJ-f40"/>
+                            <constraint firstItem="tpL-s6-pvP" firstAttribute="centerY" secondItem="LaM-jR-pdX" secondAttribute="centerY" id="143-NR-0kh"/>
+                            <constraint firstItem="LaM-jR-pdX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NXK-Oq-McI"/>
+                            <constraint firstItem="LaM-jR-pdX" firstAttribute="top" secondItem="89p-wZ-C0Z" secondAttribute="bottom" constant="20" id="Uqd-ay-cn9"/>
+                            <constraint firstItem="89p-wZ-C0Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="UvI-1W-dCb"/>
+                            <constraint firstAttribute="trailing" secondItem="Gt2-ea-DVe" secondAttribute="trailing" id="ZWQ-rO-lfI"/>
+                            <constraint firstItem="tpL-s6-pvP" firstAttribute="centerX" secondItem="LaM-jR-pdX" secondAttribute="centerX" id="ZcH-e0-a8P"/>
+                            <constraint firstItem="89p-wZ-C0Z" firstAttribute="top" secondItem="Gt2-ea-DVe" secondAttribute="bottom" constant="20" id="aBW-mv-du2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7qF-RR-M3x" secondAttribute="bottom" constant="30" id="bC6-7Z-ay0"/>
+                            <constraint firstItem="7qF-RR-M3x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hd3-rS-PAi"/>
+                            <constraint firstItem="Gt2-ea-DVe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lLj-ND-Kwl"/>
+                            <constraint firstItem="Gt2-ea-DVe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tNb-BR-AQ7"/>
+                            <constraint firstItem="7qF-RR-M3x" firstAttribute="top" secondItem="LaM-jR-pdX" secondAttribute="bottom" constant="12" id="uqG-Fg-AHC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="tpL-s6-pvP" id="5du-0W-zMe"/>
+                        <outlet property="trascriptionTextView" destination="89p-wZ-C0Z" id="3sV-vn-4bJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
