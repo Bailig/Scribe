@@ -126,6 +126,7 @@
 				TargetAttributes = {
 					025528331E9C95F10049CBA1 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 73QVNZWQQJ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -292,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 73QVNZWQQJ;
 				INFOPLIST_FILE = Scribe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bailigabhanar.Scribe;
@@ -304,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 73QVNZWQQJ;
 				INFOPLIST_FILE = Scribe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bailigabhanar.Scribe;
